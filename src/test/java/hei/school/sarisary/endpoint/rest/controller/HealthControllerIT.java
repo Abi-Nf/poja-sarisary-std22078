@@ -13,10 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 @PojaGenerated
 class HealthControllerIT extends FacadeIT {
 
-  @Autowired
-  PingController pingController;
-  @Autowired
-  HealthDbController healthDbController;
+  @Autowired PingController pingController;
+  @Autowired HealthDbController healthDbController;
 
   @Test
   void ping() {

@@ -3,10 +3,9 @@ package hei.school.sarisary;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
+import hei.school.sarisary.endpoint.event.EventConsumer;
 import java.util.List;
 import java.util.Map;
-
-import hei.school.sarisary.endpoint.event.EventConsumer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;

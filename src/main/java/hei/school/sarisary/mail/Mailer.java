@@ -4,6 +4,7 @@ import static jakarta.mail.Message.RecipientType.BCC;
 import static jakarta.mail.Message.RecipientType.CC;
 import static jakarta.mail.Message.RecipientType.TO;
 
+import hei.school.sarisary.PojaGenerated;
 import hei.school.sarisary.file.FileTyper;
 import jakarta.activation.DataHandler;
 import jakarta.activation.DataSource;
@@ -24,7 +25,6 @@ import java.util.Properties;
 import java.util.function.Consumer;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import hei.school.sarisary.PojaGenerated;
 import software.amazon.awssdk.core.SdkBytes;
 import software.amazon.awssdk.services.ses.model.RawMessage;
 import software.amazon.awssdk.services.ses.model.SendRawEmailRequest;

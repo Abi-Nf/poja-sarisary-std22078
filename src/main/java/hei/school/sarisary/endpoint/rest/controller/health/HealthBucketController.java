@@ -1,10 +1,13 @@
 package hei.school.sarisary.endpoint.rest.controller.health;
 
+import static hei.school.sarisary.file.FileHashAlgorithm.NONE;
 import static java.io.File.createTempFile;
 import static java.nio.file.Files.createTempDirectory;
 import static java.util.UUID.randomUUID;
-import static hei.school.sarisary.file.FileHashAlgorithm.NONE;
 
+import hei.school.sarisary.PojaGenerated;
+import hei.school.sarisary.file.BucketComponent;
+import hei.school.sarisary.file.FileHash;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,9 +19,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import hei.school.sarisary.PojaGenerated;
-import hei.school.sarisary.file.BucketComponent;
-import hei.school.sarisary.file.FileHash;
 
 @PojaGenerated
 @RestController

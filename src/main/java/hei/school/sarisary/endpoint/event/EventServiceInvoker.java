@@ -1,5 +1,6 @@
 package hei.school.sarisary.endpoint.event;
 
+import hei.school.sarisary.PojaGenerated;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -10,7 +11,6 @@ import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
-import hei.school.sarisary.PojaGenerated;
 
 @PojaGenerated
 @AllArgsConstructor
@@ -39,7 +39,9 @@ public class EventServiceInvoker implements Consumer<EventConsumer.TypedEvent> {
 
   private String getEventService(String eventClazzName) {
     var typeNameAsArray = eventClazzName.split("\\.");
-    return "hei.school.sarisary.service.event." + typeNameAsArray[typeNameAsArray.length - 1] + "Service";
+    return "hei.school.sarisary.service.event."
+        + typeNameAsArray[typeNameAsArray.length - 1]
+        + "Service";
   }
 
   private Set<Class<?>> getAllClasses(String packageName) {

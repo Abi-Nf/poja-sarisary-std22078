@@ -1,10 +1,10 @@
 package hei.school.sarisary.repository.model;
 
+import hei.school.sarisary.PojaGenerated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
-import hei.school.sarisary.PojaGenerated;
 
 @PojaGenerated
 @Entity

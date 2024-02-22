@@ -2,20 +2,19 @@ package hei.school.sarisary.service.event;
 
 import hei.school.sarisary.file.BucketComponent;
 import hei.school.sarisary.repository.model.Transformed;
-import lombok.SneakyThrows;
-import org.springframework.stereotype.Service;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.time.Duration;
+import javax.imageio.ImageIO;
+import lombok.SneakyThrows;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ImageService {
   private final BucketComponent bucket;
 
-  public ImageService(BucketComponent bucket){
+  public ImageService(BucketComponent bucket) {
     this.bucket = bucket;
   }
 
@@ -23,16 +22,16 @@ public class ImageService {
   private static final String BW = "-bw-image";
 
   @SneakyThrows
-  public String upload(File file, String id){
-    if(file != null){
-      bucket.upload(file, id + ORIGINAL);
+  public String upload(File file, String id) {
+    if (file != null) {
       bucket.upload(blackAndWhite(file), id + BW);
+      bucket.upload(file, id + ORIGINAL);
       return null;
     }
     return null;
   }
 
-  public Transformed getImage(String id){
+  public Transformed getImage(String id) {
     Transformed file = new Transformed();
     file.setOriginal_url(bucket.presign(id + ORIGINAL, Duration.ofHours(4)).toString());
     file.setTransformed_url(bucket.presign(id + BW, Duration.ofHours(4)).toString());

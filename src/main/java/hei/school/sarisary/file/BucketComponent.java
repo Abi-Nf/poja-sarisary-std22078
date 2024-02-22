@@ -2,13 +2,13 @@ package hei.school.sarisary.file;
 
 import static java.io.File.createTempFile;
 
+import hei.school.sarisary.PojaGenerated;
 import java.io.File;
 import java.net.URL;
 import java.time.Duration;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
-import hei.school.sarisary.PojaGenerated;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
 import software.amazon.awssdk.services.s3.presigner.model.GetObjectPresignRequest;
 import software.amazon.awssdk.services.s3.presigner.model.PresignedGetObjectRequest;

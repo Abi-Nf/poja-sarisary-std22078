@@ -10,12 +10,11 @@ import static org.mockito.Mockito.verify;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.List;
-
 import hei.school.sarisary.PojaGenerated;
 import hei.school.sarisary.conf.FacadeIT;
 import hei.school.sarisary.endpoint.event.EventConsumer;
 import hei.school.sarisary.endpoint.event.gen.UuidCreated;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -25,8 +24,7 @@ import software.amazon.awssdk.services.sqs.model.DeleteMessageRequest;
 @PojaGenerated
 public class SqsMessageAckTyperTest extends FacadeIT {
   public static final String UNKNOWN_TYPENAME = "unknown_typename";
-  @Autowired
-  EventConsumer.SqsMessageAckTyper subject;
+  @Autowired EventConsumer.SqsMessageAckTyper subject;
   @Autowired ObjectMapper om;
   @MockBean SqsClient sqsClient;
 
